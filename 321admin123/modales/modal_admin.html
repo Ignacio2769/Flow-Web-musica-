@@ -1,0 +1,114 @@
+<!-- <div class="text-center">
+    <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Login Modal</a>
+</div> -->
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Inicia sesión como admin</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form action="acciones/acciones_admin.php" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" name="admin" placeholder="Usuario admin" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" name="clave" placeholder="Clave" required="required">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn c-theme-btn" name="accion" value="iniciarsesion">Iniciar Sesión</button>
+                    </div>
+                    <!-- <p class="hint-text"><a href="#">Forgot Password?</a></p> -->
+                </form>
+            </div>
+            <!-- <div class="modal-footer">Don't have an account? <a href="#">Create one</a></div> -->
+        </div>
+    </div>
+</div>
+
+<!--Modal Confirmacion Borrado-->
+<div class="modal fade" id="modalborrar" tabindex="-1" role="dialog" aria-labelledby="borrar" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title">Confirmación de acción</h5>
+      </div>
+      <div class="modal-body">
+        <form action="acciones/acciones_admin.php">
+          <div class="form-group">
+            <input type="hidden" id="datos" name="datos">
+            <label>¿Está seguro que desea realizar la acción?</label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn c-theme-btn" id="accion" name="accion">Si</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal subir cancion-->
+
+<div class="modal fade" id="subircancion" tabindex="-1" role="dialog" aria-labelledby="subircancion" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title">Sube tu canción</h5>
+      </div>
+      <div class="modal-body">
+        <form action="../acciones/acciones_index_usuario.php"  enctype="multipart/form-data" method="POST">
+          <div class="form-group">
+            <label>Selecciona la canción:</label>
+            <input type="file" class="form-control-file" name="fichero" required>
+          </div>
+          <div class="form-group">
+            <label>Género de la canción:</label>
+            <input type="text" class="form-control" name="categoria" id="categoria">
+            <label>Artista:</label>
+            <input type="text" class="form-control" name="artista" id="artista" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn c-theme-btn" id="subircancion_boton" name="accion" value="subircancion">Subir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Script-->
+<script type="text/javascript">
+  $('#modalborrar').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var datos = button.data('datos');
+    var accion = button.data('accion');
+
+    $("#datos").val(datos);
+    $("#accion").val(accion);
+});
+</script>

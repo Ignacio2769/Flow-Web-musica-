@@ -1,0 +1,107 @@
+<!-- Modal Registrarse-->
+<div class="modal fade" id="registromodal" tabindex="-1" role="dialog" aria-labelledby="registromodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="registro">Regístrate</h5>
+      </div>
+      <div class="modal-body">
+        <form action="acciones/acciones_index.php">
+          <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+          </div>
+          <div class="form-group">
+            <label>Apellidos:</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+          </div>
+          <div class="form-group">
+            <label>Usuario:</label>
+            <input type="text" class="form-control" id="loginr" name="loginr" placeholder="Usuario" required>
+          </div>
+          <div class="form-group">
+            <label>Contraseña:</label>
+            <input type="password" class="form-control" id="claver" name="claver" placeholder="Contraseña" required>
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn c-theme-btn" name="accion" value="registrar">Registrarme</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Iniciar Sesion-->
+<div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="iniciarsesion">Inicia Sesión</h5>
+      </div>
+      <div class="modal-body">
+        <form action="acciones/acciones_index.php">
+          <div class="form-group">
+            <label>Usuario:</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control" id="login" name="login" placeholder="Usuario">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Contraseña:</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <input type="password" class="form-control" id="clave" name="clave" placeholder="Contraseña">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn c-theme-btn" name="accion" value="iniciarsesion">Iniciar Sesión</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal sugerencias-->
+
+<div class="modal fade" id="sugerencia" tabindex="-1" role="dialog" aria-labelledby="sugerencia" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title">Estamos pendientes de ti, ¿cuál es tu sugerencia?</h5>
+      </div>
+      <div class="modal-body">
+        <form action="acciones/acciones_index_usuario.php">
+          <div class="form-group">
+            <label>Desarróllala aquí:</label>
+            <div class="form-group">
+              <textarea class="form-control" name="sugerenciauser" rows="7" required></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn c-theme-btn" id="sugerir" name="accion" value="sugerencia">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
